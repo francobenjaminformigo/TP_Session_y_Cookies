@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head')  %> 
+<body class="<%= locals.backgroundColor ? backgroundColor : null %>">
+    <% if (locals.name) { %>
+        <div class="container-fluid w-50 form-control text-center">
+            <p>Hola <b><%= name %></b>, elegiste el color: <b><%= backgroundColor %></b>, tu email es: <b><%= email %></b> y tu edad es: <b><%= age %> </b></p>
+            <a href="/user" class="btn border btn-success">Presiona el boton</a>
+            <a href="/user/reset" class="btn btn-danger">Olvidar el color</a>
+        </div>
+    <% } %>
+    <div class="vh-100 d-flex align-items-center justify-content-center">
+        <form action="/" method="post" class="container-fluid w-25 form-control text-center" novalidate>
+            <div class="m-4">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" name="name" class="form-control w-75 mx-auto" id="name" value="<%= locals.old && locals.old.name ? old.name : null%>" placeholder="Nombre">
+                <span class="text-danger samll"><%= locals.errors && locals.errors.name ? errors.name.msg : null %></span>
+            </div>
+            <div class="m-4">
+                <label for="color" class="form-label">Color de Fondo</label>
+                <select name="backgroundColor" id="color" class="form-select w-75 mx-auto" aria-label="Color de Fondo">
+                    <option value="rojo">Rojo</option>
+                    <option value="verde">Verde</option>
+                    <option value="amarillo">Amarillo</option>
+                </select>
+                <span class="text-danger small"><%= locals.errors && locals.errors.backgroundColor ? errors.backgroundColor.msg : null %></span>
+            </div>
+            <div class="m-4">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control w-75 mx-auto" placeholder="Email" value="<%= locals.old && locals.old.email ? old.email : null%>">
+                <span class="text-danger small"><%= locals.errors && locals.errors.email ? errors.email.msg : null %></span>
+            </div>
+            <div class="m-4">
+                <label for="age" class="form-label">Edad</label>
+                <input type="number" class="form-control w-75 mx-auto" id="age" placeholder="Edad" name="age" value="<%= locals.old && locals.old.age ? old.age : null%>">
+                <span class="text-danger small"><%= locals.errors && locals.errors.age ? errors.age.msg : null %></span>
+            </div>
+            <div class="form-check">
+                <div class="m-4 d-flex justify-content-center">
+                    <input type="checkbox" class="form-check-input" value="remember" name="remember" id="remember">
+                    <label for="form-check-label" for="remember">Recordar Color</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>
+
