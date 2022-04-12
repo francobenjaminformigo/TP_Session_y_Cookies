@@ -1,6 +1,6 @@
 # TP. Session y Cookies
 
-_Práctica de **Session**, **Cookies** y **express-validator**._
+_Práctica de **Session**, **Cookies** y **express-validator** la cual consiste en un pequeño login con sus respectivas validaciones._
 
 
 ## Objetivo:
