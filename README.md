@@ -6,3 +6,6 @@ _Práctica de **Session**, **Cookies** y **express-validator** la cual consiste 
 ## Objetivo:
 
 _"En esta práctica veremos cómo podemos utilizar Express Validator y además seguiremos aprendiendo sobre cookies y Session, súper necesarias para nuestras aplicaciones. ¡Buena suerte!😎👍✨."_
+#
+### _Módulo 5, Clase 26_
+##
